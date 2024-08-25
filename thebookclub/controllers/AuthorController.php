@@ -14,7 +14,9 @@ class AuthorController extends Controller {
             Yii::$app->session->setFlash('warning', 'Ese autor no existe');
             return $this->redirect(['author/all']);
         }
-        return $author->toString();
+        return $this->render('detail', [
+            'author' => $author,
+        ]);
     }
 
     public function actionAll($search = null){

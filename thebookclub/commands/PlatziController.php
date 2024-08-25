@@ -39,7 +39,7 @@ class PlatziController extends Controller {
             if(!empty($data[1]) && !empty($data[2])){
                 $book = new Book;
                 $book->title = $data[1];
-                $book->author = $data[2];
+                $book->save();
                 printf("%s\n", $book->toString());
             }
         }

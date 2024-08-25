@@ -68,4 +68,16 @@ class PlatziController extends Controller {
         printf("Nombre: %s\n", $author->name);
         return ExitCode::OK;
     }
+
+    public function actionBook($book_id){
+        $book = Book::findOne($book_id);
+
+        if (empty($book)){
+            printf("El libro no existe.\n");
+            return ExitCode::DATAERR;
+        }
+
+        printf("%s\n", $book->toString());
+        return ExitCode::OK;
+    }
 }

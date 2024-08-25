@@ -8,8 +8,8 @@ use app\models\Book;
 
 class BookController extends Controller {
     public function actionAll(){
-        $book = Book::find()->all();
-        return serialize($book);
+        $books = Book::find()->all();
+        return $this->render('all.tpl', ['books' => $books, 'titulo' => 1]);
     }
 
     public function actionDetail($id){

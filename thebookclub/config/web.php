@@ -53,6 +53,13 @@ $config = [
                 'author/search/<search:\w+>' => 'author/all',
             ],
         ],
+        'view' => [
+            'renderers' => [
+                'tpl' => [
+                    'class' => 'yii\smarty\ViewRenderer',
+                ],
+            ],
+        ],
     ],
     'params' => $params,
 ];

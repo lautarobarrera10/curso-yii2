@@ -2,8 +2,8 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
-    'username' => 'root',
+    'dsn' => sprintf("mysql:host=%s;dbname=%s", getenv('db_host'), getenv('db_name')),
+    'username' => sprintf("%s", getenv('db_user')),
     'password' => '',
     'charset' => 'utf8',
 

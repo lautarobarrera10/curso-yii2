@@ -11,4 +11,12 @@ class Author extends ActiveRecord {
     public function getId(){
         return $this->author_id;
     }
+
+    public function getBooks(){
+        return $this->hasMany(Book::class, ['author_id' => 'author_id'])->all();
+    }
+
+    public function toString(){
+        return sprintf("%s (%s)", $this->name, count($this->books));
+    }
 }

@@ -65,7 +65,10 @@ class PlatziController extends Controller {
             return ExitCode::DATAERR;
         }
 
-        printf("Nombre: %s\n", $author->name);
+        printf("%s\n", $author->toString());
+        foreach($author->books as $book){
+            printf(" - %s\n", $book->toString());
+        }
         return ExitCode::OK;
     }
 
